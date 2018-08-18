@@ -1,0 +1,33 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <title>Welcome to Unit 1 </title>
+        <script language="javascript">
+            function joinName(){
+               var fname=document.getElementById("fname").value;
+               var lname=document.getElementById("lname").value;
+               var fullName=fname + " " + lname;
+               document.getElementById("result").innerHTML=fullName;
+               //var arr=["Ford","Maruti","BMW"];
+               var arr=new Array("Ford","Maruti","BMW");
+                for(x in arr){
+                    document.getElementById("result").innerHTML+= "<br/>"+arr[x];
+                }
+               
+            }
+        </script>
+    </head>
+    <body>
+            FirstName:<input type="text" id="fname" value="" /> <br/><br/>
+            LastName:<input type="text" id="lname" value="" /> <br/>
+            <br/>
+                
+        <input type="button" value="Click me" onclick="joinName();"/>
+        <br/><br/>
+        FullName:<output id="result"></output>
+
+    </body>
+</html>
+Himanshu
+Aanchal
+Ronit

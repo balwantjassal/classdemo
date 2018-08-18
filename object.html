@@ -1,0 +1,24 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <title>JavaScript Objects Demo </title>
+        <script language="javascript">     
+        var Car=function(model,make,year){
+            this.model={name:model,price:2000};
+            this.make=make;
+            this.year=year;
+            this.details=function(){
+                return JSON.stringify(this.model) + " " + this.make + " " + this.year;
+            }
+        }
+        var obj=new Car("X10","BMW","10/10/2017");
+        alert(obj.details());
+
+        
+        </script>
+    </head>
+    <body>
+      <h1>JavaScript Objects Demo</h1>
+    </body>
+</html>
+

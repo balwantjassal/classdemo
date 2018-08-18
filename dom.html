@@ -1,0 +1,39 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <title>DOM Demo </title>
+        <script language="javascript">
+           function testDom(){
+                //alert(document.getElementsByTagName("p")[0].childNodes[0].nodeValue);
+                document.getElementsByTagName("p")[1].style.backgroundColor="yellow";
+           }
+           function hideMe(obj){
+               obj.style.visibility="hidden";
+           }
+           function showAll(){
+               var p=document.getElementsByTagName("p").length;
+               for(var i=0;i<p;i++)
+               {
+                   document.getElementsByTagName("p")[i].style.visibility="visible";
+               }
+           }
+           function changeImage(imgObj,path){
+               imgObj.src="images/"+path;
+           }
+        </script>
+    </head>
+    <body>
+        <h1>Testing DOM Model</h1>
+        <p>Dom Description 1</p> 
+        <p>Dom Description 2</p>           
+        <input type="button" value="Testing Dom" onclick="testDom();"/>
+        <p onclick="hideMe(this);">Click me to Hide 1</p> 
+        <p onclick="hideMe(this);">Click me to Hide 2</p> 
+        <p onclick="hideMe(this);">Click me to Hide 3</p> 
+        <input type="button" value="showAll" onclick="showAll();"/>
+        <img src="images/coke.jpeg" onmouseover="changeImage(this,'pepsi.jpeg');"
+        
+            onmouseout="changeImage(this,'coke.jpeg');" />
+    </body>
+</html>
+

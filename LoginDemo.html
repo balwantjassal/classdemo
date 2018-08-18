@@ -1,0 +1,41 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <title>Arrays Demo </title>
+        <script language="javascript">     
+        function validate(frm){
+            var username=frm.uname.value;
+            var password=frm.upass.value;
+            var exp=/^(?=.*[0-9])(?=.*[a-z])(?=.[A-Z]).*$/; // Strong Password
+         //   alert(password.match(exp));
+            if(username.length==0){
+                alert('Kindly Enter your username..');
+                frm.uname.focus();
+                return false;
+            }else if(!password.match(exp)){
+                alert('Kindly Enter a valid password...');
+                frm.upass.focus();
+                return false;
+            }
+
+            return true;
+
+        }      
+        </script>
+    </head>
+    <body>
+    <fieldset>
+        <legend>Login Box</legend>
+        <form method="post" action="index.php" onsubmit="return validate(this);">
+            username:<br/>
+            <input type="text" name="uname" value="" placeholder="Enter Username"/><br/>
+            password:<br/>
+            <input type="text" name="upass" value="" /><br/>
+            <br/>
+            <input type="submit" name="btn" value="Login" /><br/>          
+
+        </form>
+    </fieldset>        
+    </body>
+</html>
+

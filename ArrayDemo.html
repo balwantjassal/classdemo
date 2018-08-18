@@ -1,0 +1,50 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <title>Arrays Demo </title>
+        <script language="javascript">
+            var states=new Array("Punjab","Uttrakhand","Haryana","Jammu and Kashmir","Delhi","Himachal");
+            var cities={
+                "Punjab":["Amritsar","Ludhiana","Jalandhar"],
+                "Uttrakhand":["Haridwar","Dehradun","RishiKesh"],
+                "Haryana":["Ambala","Rohtak","Panipat"],
+                "Jammu and Kashmir":["Srinagar","Jammu","Pehalgam"],
+                "Delhi":["Old Delhi","New Delhi","Dwarka"],
+                "Himachal":["Shimla","Hamirpur","Palampur"]    
+            };
+           function listCities(obj){
+               //alert(obj.value  + cities[obj.value]);
+               //var arrCity=cities[obj.value];
+              var elem=document.getElementById("cities");
+              
+              for(let i=0;i<cities[obj.value].length;i++){
+                var newElem=document.createElement("option");
+                newElem.text=cities[obj.value][i];
+                newElem.value=cities[obj.value][i];
+                elem.appendChild(newElem);
+              }
+              
+              
+           }
+        </script>
+    </head>
+    <body onload="init();">
+        <h1>Choose a State to view cities</h1>
+        <select id="state" size="1" onchange="listCities(this);">
+            <option value="none">Choose a State</option>
+            <script>
+                for(let i=0;i<states.length;i++){
+                    document.write("<option value='"+states[i]+"'>"+states[i]+"</option>");
+                }
+            </script>               
+
+        </select>
+        <h1>List of cities as per selected state</h1>
+        <select id="cities" size="1" >
+            <option value="none">Choose a State</option>
+           
+        </select>
+        
+    </body>
+</html>
+
